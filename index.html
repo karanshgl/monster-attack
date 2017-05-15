@@ -1,0 +1,38 @@
+<html>
+<script src="https://unpkg.com/vue@2.3.3/dist/vue.js"></script>
+<link rel="stylesheet" href="css/style.css">
+
+<body>
+    
+    <div id='app'>
+        <div v-if="!giveUp">
+            
+                
+                <div class="user">
+                    <div :style="userHealth()">You</div>
+                </div>
+                <div class="monster">
+                    <div :style="monsterHealth()">Monster</div>
+                </div>
+                <div class="buttons">
+                <hr> 
+                <button @click="attack()">Attack</button>
+                <button @click="Sattack()">Special Attack</button>
+                <button @click="heal()">Heal</button>
+                <button @click="giveUp=!giveUp">Give Up</button>
+                <hr>
+            </div>
+                <div class="log">
+                    <h2>Attack Log</h2>
+                    <div v-for="move in moves">{{move}}</div>
+                </div>
+            </div>
+        <div v-else>
+        <button @click="playAgain()">Play Again</button>
+        </div>
+    </div>
+    
+</body>
+<script src="js/custom.js"></script>
+
+</html>
